@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 interface Passenger {
-  id: number,
-  fullname: string,
-  checkedIn: boolean
+    id: number,
+    fullname: string,
+    checkedIn: boolean
 }
 
 @Component({
@@ -12,6 +12,12 @@ interface Passenger {
   template: `
     <div class="app">
         <h3>airline passengers</h3>
+        <ul>
+            <li *ngFor="let passenger of passengers; let i = index">
+                {{i}}: {{passenger.fullname}}
+
+            </li>
+        </ul>
     </div>
   `
 })
